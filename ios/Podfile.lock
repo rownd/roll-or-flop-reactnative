@@ -404,7 +404,7 @@ PODS:
     - React-RCTImage
   - RNSVG (13.1.0):
     - React-Core
-  - Rownd (1.8.1):
+  - Rownd (1.8.2):
     - AnyCodable-FlightSchool (~> 0.6.5)
     - CodeScanner_Rownd (~> 2.2.1)
     - Get (~> 2.0.1)
@@ -473,7 +473,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
-  - Rownd (~> 1.8.0)
+  - Rownd (~> 1.8.2)
   - "rownd-react-native (from `../node_modules/@rownd/react-native__native-modules`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -656,12 +656,12 @@ SPEC CHECKSUMS:
   ReSwiftThunk: 7ca5145764be6f30b62db88a52d170133954629e
   RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9
   RNSVG: 1153e8eeb34c788841016c517dba9f57f20b762f
-  Rownd: 821f946a189b2a85c3da7c309b4cf43d41e1573a
+  Rownd: 9023128d9647e6f78156508b17c71d1caf1741f8
   rownd-react-native: 9a89ee2d410f96c398d5280ff7b41d3fb96be2c6
   Sodium: 23d11554ecd556196d313cf6130d406dfe7ac6da
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   Yoga: c2b1f2494060865ac1f27e49639e72371b1205fa
 
-PODFILE CHECKSUM: 913798df113150cb221a3380927524c59360379c
+PODFILE CHECKSUM: 0958b681fe9fb07aafc3b7e4408289bb30038fdd
 
 COCOAPODS: 1.11.3
