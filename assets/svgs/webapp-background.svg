@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1312px" height="960px" viewBox="0 0 1312 960" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>webapp-background</title>
+    <defs>
+        <linearGradient x1="62.0712472%" y1="87.8230089%" x2="9.11122705%" y2="24.6019773%" id="linearGradient-1">
+            <stop stop-color="#325FF4" offset="0%"></stop>
+            <stop stop-color="#0FC6BC" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="1312" height="960"></rect>
+        <linearGradient x1="92.8351431%" y1="55.1143706%" x2="10.8003409%" y2="44.1344249%" id="linearGradient-4">
+            <stop stop-color="#325FF4" offset="0%"></stop>
+            <stop stop-color="#0FC6BC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="71.6876169%" y1="103.434861%" x2="18.0505734%" y2="-20.4722672%" id="linearGradient-5">
+            <stop stop-color="#325FF4" offset="0%"></stop>
+            <stop stop-color="#0FC6BC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="107.574734%" y1="169.754274%" x2="-23.6724805%" y2="-53.0425948%" id="linearGradient-6">
+            <stop stop-color="#325FF4" offset="0%"></stop>
+            <stop stop-color="#0FC6BC" offset="100%"></stop>
+            <stop stop-color="#0FC6BC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="webapp-background">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="Rectangle-Copy-4" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+            <path d="M-61.4615385,429 C125.205128,380.333333 286.871795,375.666667 423.538462,415 C628.538462,474 1001.53846,681 1288.53846,688 C1479.87179,692.666667 1503.20513,794 1358.53846,992 L-171.461538,992 L-61.4615385,429 Z" id="Path-4" fill="url(#linearGradient-4)" mask="url(#mask-3)"></path>
+            <circle id="Oval" stroke="url(#linearGradient-5)" stroke-width="81" mask="url(#mask-3)" cx="1053.53846" cy="198" r="294.5"></circle>
+            <circle id="Oval-Copy" stroke="url(#linearGradient-6)" stroke-width="81" mask="url(#mask-3)" cx="138.538462" cy="883" r="179.5"></circle>
+        </g>
+    </g>
+</svg>

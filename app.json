@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "basic2",
-    "slug": "basic2",
-    "version": "1.0.0",
+    "name": "rollorflop",
+    "slug": "rollorflop",
+    "owner": "rownd",
+    "version": "8.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/1024_1.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -24,10 +25,18 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "io.rownd.rollorflop"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0892fbd6-f4a9-47a6-aa12-d0f0f2ec5757"
+      }
     }
-  }
+  },
+  "currentFullName": "@rownd/rollorflop",
+  "originalFullName": "@rownd/rollorflop"
 }
