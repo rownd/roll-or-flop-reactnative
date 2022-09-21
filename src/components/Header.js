@@ -5,6 +5,7 @@ import {
   Button,
   TouchableHighlight,
   TouchableOpacity,
+  StatusBar
 } from 'react-native';
 import React, { useState } from 'react';
 import SVGLogo from '../../assets/svgs/wondrgames-white.svg';
@@ -15,17 +16,18 @@ import MenuScreen from './MenuScreen';
 const Header = ({ navigation, hideMenu }) => {
   const [open, setOpen] = useState(false);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
+  
   return (
     <View style={{ width: '100%' }}>
       <View
         style={{
-          height: 90,
+          height: 75,
           width: '100%',
           backgroundColor: showLeaderboard ? '#009CA3':'#13BBC2',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
-          paddingTop: 48,
+          paddingTop: StatusBar.visible ? 48 : 30,
           paddingLeft: 16,
           paddingRight: 16,
         }}

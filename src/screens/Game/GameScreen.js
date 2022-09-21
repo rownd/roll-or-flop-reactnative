@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import React, { useState } from 'react';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import BackgroundImageComponent from '../../components/Background';
@@ -14,6 +14,8 @@ export default function GameScreen({ data }) {
   const [isCorrect, setIsCorrect] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [index, setIndex] = useState(0);
+
+  const windowHeight = Dimensions.get('window').height;
 
   const handleConfettiCannon = () => {
     setShowConfetti(false);
@@ -71,9 +73,9 @@ export default function GameScreen({ data }) {
       }}
     >
       <BackgroundImageComponent />
-      <View style={{ marginTop: 16 }}>
-        <RollOrFlopImage height={56} width={137} />
-      </View>
+     {windowHeight > 650 && <View style={{ marginTop: 8 }}>
+        <RollOrFlopImage height={Math.min(56, windowHeight*.08)} width={137} />
+      </View>}
       <View
         style={{
           backgroundColor: '#2E6AEE',
@@ -81,7 +83,7 @@ export default function GameScreen({ data }) {
           paddingLeft: 30,
           paddingRight: 30,
           borderRadius: 27,
-          marginTop: 24,
+          marginTop: 16,
         }}
       >
         <Text style={{ fontSize: 20, color: 'white' }}>
@@ -91,7 +93,7 @@ export default function GameScreen({ data }) {
       <View
         style={{
           width: '90%',
-          height: 361,
+          height: Math.min(361, windowHeight*.47),
           position: 'relative',
           marginTop: 8,
           alignItems: 'center',
@@ -114,23 +116,23 @@ export default function GameScreen({ data }) {
           }}
         />
         {(!showResult || (isCorrect && showResult)) && (
-          <Text style={{ marginTop: 24, color: '#2156CA', fontSize: 40 }}>
+          <Text style={{ marginTop: Math.min(24, windowHeight*.025), color: '#2156CA', fontSize: Math.min(40, windowHeight*.045) }}>
             {isCorrect && showResult && (
-              <AntDesign name="checkcircle" size={40} color="#2156CA" />
+              <AntDesign name="checkcircle" size={Math.min(40, windowHeight*.04)} color="#2156CA" />
             )}{' '}
             {data && data[index].name}
           </Text>
         )}
 
         {!isCorrect && showResult && (
-          <Text style={{ marginTop: 24, color: 'grey', fontSize: 54 }}>
-            <AntDesign name="closecircle" size={40} color="#FD0000" /> Nope
+          <Text style={{ marginTop: Math.min(24, windowHeight*.02), color: 'grey', fontSize: Math.min(52, windowHeight*.05) }}>
+            <AntDesign name="closecircle" size={Math.min(40, windowHeight*.04)} color="#FD0000" /> Nope
           </Text>
         )}
 
         {data && (
           <Image
-            style={{ width: 208, height: 130, marginTop: 20, borderRadius: 12 }}
+            style={{ width: Math.min(208, windowHeight*.42 ), height: Math.min(130, windowHeight*.35), marginTop: Math.min(20, windowHeight*.02), borderRadius: 12 }}
             source={{
               uri: showResult ? data[index].url : data[index].still_src,
             }}
@@ -143,7 +145,7 @@ export default function GameScreen({ data }) {
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'center',
-            marginTop: 31,
+            marginTop: Math.min(31, windowHeight*.02),
           }}
         >
           {showResult ? (
@@ -169,8 +171,8 @@ export default function GameScreen({ data }) {
             <>
               <TouchableOpacity
                 style={{
-                  width: 130,
-                  height: 72,
+                  width: Math.min(130, windowHeight*.18),
+                  height: Math.min(72, windowHeight*.1),
                   backgroundColor: '#13BBC2',
                   marginRight: 8,
                   borderRadius: 20,
@@ -183,12 +185,12 @@ export default function GameScreen({ data }) {
                   pickRollFlop('roll');
                 }}
               >
-                <RollImage height={58} width={93} />
+                <RollImage height={Math.min(58, windowHeight*.08)} width={93} />
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
-                  width: 130,
-                  height: 72,
+                  width: Math.min(130, windowHeight*.18),
+                  height: Math.min(72, windowHeight*.1),
                   backgroundColor: '#13BBC2',
                   borderRadius: 20,
                   alignItems: 'center',
@@ -200,7 +202,7 @@ export default function GameScreen({ data }) {
                   pickRollFlop('flop');
                 }}
               >
-                <FlopImage height={58} width={110} />
+                <FlopImage height={Math.min(58, windowHeight*.04)} width={110} />
               </TouchableOpacity>
             </>
           )}

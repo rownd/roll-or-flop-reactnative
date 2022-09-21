@@ -7,7 +7,7 @@ const BackgroundImageComponent = () => {
       style={{
         position: 'absolute',
         top: 0,
-        left: -150,
+        left: -270,
         right: 0,
         bottom: 0,
         display: 'flex',

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import React from 'react';
 import RollOrFlopImage from '../../../assets/svgs/rollorflop-noshadow.svg';
 import WonderGamesImage from '../../../assets/svgs/wondrgames-black2.svg';
@@ -7,6 +7,7 @@ import { useRownd } from '@rownd/react-native__native-modules';
 
 const HomeScreen = ({ navigation }) => {
   const { requestSignIn, user, signOut, is_authenticated } = useRownd();
+  const windowHeight = Dimensions.get('window').height;
 
   return (
     <View
@@ -26,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
       <View
         style={{
           width: '90%',
-          height: 294,
+          height: Math.min(294, windowHeight*.4),
           backgroundColor: 'white',
           opacity: 0.6,
           borderRadius: 40,
@@ -49,7 +50,7 @@ const HomeScreen = ({ navigation }) => {
         <View
           style={{
             width: 270,
-            height: 79,
+            height: Math.min(79, windowHeight*.1),
             backgroundColor: '#2E6AEE',
             borderRadius: 20,
             alignItems: 'center',
@@ -58,13 +59,13 @@ const HomeScreen = ({ navigation }) => {
             borderColor: 'white',
           }}
         >
-          <Text style={{ fontSize: 40, color: 'white' }}>Play Now</Text>
+          <Text style={{ fontSize: Math.min(38, windowHeight*.05), color: 'white' }}>Play Now</Text>
         </View>
       </TouchableOpacity>
 
       {!is_authenticated ? (
         <TouchableOpacity
-          style={{ marginTop: 32 }}
+          style={{ marginTop: Math.min(32, windowHeight*.04) }}
           onPress={() => requestSignIn()}
         >
           <Text style={{ fontSize: 18, color: 'white' }}>
