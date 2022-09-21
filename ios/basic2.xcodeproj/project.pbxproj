@@ -335,7 +335,7 @@
 				CODE_SIGN_ENTITLEMENTS = basic2/basic2.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 34CNMPW6U9;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -345,7 +345,7 @@
 				INFOPLIST_FILE = basic2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 8.0.0;
+				MARKETING_VERSION = 8.0.3;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -370,12 +370,12 @@
 				CODE_SIGN_ENTITLEMENTS = basic2/basic2.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 34CNMPW6U9;
 				INFOPLIST_FILE = basic2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 8.0.0;
+				MARKETING_VERSION = 8.0.3;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
