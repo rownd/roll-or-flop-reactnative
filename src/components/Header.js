@@ -5,31 +5,38 @@ import {
   Button,
   TouchableHighlight,
   TouchableOpacity,
-  StatusBar
 } from 'react-native';
 import React, { useState } from 'react';
 import SVGLogo from '../../assets/svgs/wondrgames-white.svg';
 import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import MenuScreen from './MenuScreen';
+import { NativeModules } from 'react-native';
 
 const Header = ({ navigation, hideMenu }) => {
   const [open, setOpen] = useState(false);
+  const [statusBarHeight, setStatusBarHeight] = useState(40);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
+
+  const { StatusBarManager } = NativeModules;
+
+  StatusBarManager.getHeight(({height}) => {
+    setStatusBarHeight(height)
+  });
   
   return (
     <View style={{ width: '100%' }}>
       <View
         style={{
-          height: 75,
           width: '100%',
           backgroundColor: showLeaderboard ? '#009CA3':'#13BBC2',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
-          paddingTop: StatusBar.visible ? 48 : 30,
+          paddingTop: statusBarHeight + 5,
           paddingLeft: 16,
           paddingRight: 16,
+          paddingBottom: 10
         }}
       >
         <SVGLogo width={72} height={20} />
