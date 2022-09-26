@@ -10,10 +10,9 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/native-stack": "^6.8.0",
-    "@rownd/react-native__native-modules": "^0.4.0",
+    "@rownd/react-native__native-modules": "^0.7.0",
     "axios": "^0.27.2",
     "expo": "~46.0.9",
-    "expo-dev-client": "~1.2.1",
     "expo-font": "^10.2.0",
     "expo-splash-screen": "~0.16.2",
     "expo-status-bar": "~1.4.0",

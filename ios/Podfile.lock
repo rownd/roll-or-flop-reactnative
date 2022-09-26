@@ -414,7 +414,7 @@ PODS:
     - ReSwiftThunk (~> 2.0.1)
     - Sodium (~> 0.9.1)
     - SwiftKeychainWrapper (~> 4.0.1)
-  - rownd-react-native (0.4.0):
+  - rownd-react-native (0.7.0):
     - React-Core
     - Rownd
   - Sodium (0.9.1)
@@ -657,7 +657,7 @@ SPEC CHECKSUMS:
   RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9
   RNSVG: 1153e8eeb34c788841016c517dba9f57f20b762f
   Rownd: 9023128d9647e6f78156508b17c71d1caf1741f8
-  rownd-react-native: 9a89ee2d410f96c398d5280ff7b41d3fb96be2c6
+  rownd-react-native: dcd3fcbc966c609db5ad5e2d642df19ec0306aa7
   Sodium: 23d11554ecd556196d313cf6130d406dfe7ac6da
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   Yoga: c2b1f2494060865ac1f27e49639e72371b1205fa

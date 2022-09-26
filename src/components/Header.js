@@ -6,7 +6,7 @@ import {
   TouchableHighlight,
   TouchableOpacity,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SVGLogo from '../../assets/svgs/wondrgames-white.svg';
 import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -15,14 +15,18 @@ import { NativeModules } from 'react-native';
 
 const Header = ({ navigation, hideMenu }) => {
   const [open, setOpen] = useState(false);
-  const [statusBarHeight, setStatusBarHeight] = useState(40);
+  const [statusBarHeight, setStatusBarHeight] = useState(Platform.OS === 'ios' ? 40 : 10);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   const { StatusBarManager } = NativeModules;
 
-  StatusBarManager.getHeight(({height}) => {
-    setStatusBarHeight(height)
-  });
+  useEffect(() => {
+    if (Platform.OS === 'ios') {
+      StatusBarManager?.getHeight(({height}) => {
+        setStatusBarHeight(height)
+      });
+    }
+  },[])
   
   return (
     <View style={{ width: '100%' }}>
