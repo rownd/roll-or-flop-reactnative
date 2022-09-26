@@ -1,4 +1,4 @@
-package com.mfmurrayrownd.myandroid;
+package io.rownd.reactnativedemo;
 
 import android.os.Build;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.mfmurrayrownd.myandroid.newarchitecture.components;
+package io.rownd.reactnativedemo.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

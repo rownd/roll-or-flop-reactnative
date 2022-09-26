@@ -1,4 +1,4 @@
-package com.mfmurrayrownd.myandroid.newarchitecture;
+package io.rownd.reactnativedemo.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.mfmurrayrownd.myandroid.BuildConfig;
-import com.mfmurrayrownd.myandroid.newarchitecture.components.MainComponentsRegistry;
-import com.mfmurrayrownd.myandroid.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import io.rownd.reactnativedemo.BuildConfig;
+import io.rownd.reactnativedemo.newarchitecture.components.MainComponentsRegistry;
+import io.rownd.reactnativedemo.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
