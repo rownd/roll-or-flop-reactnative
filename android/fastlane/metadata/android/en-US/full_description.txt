@@ -1,0 +1,18 @@
+Roll or Flop is a fun and engaging game where you try to guess whether a still image from a gif represents someone or something "rolling" or "flopping."
+
+GAME
+- Carefully examine a still image depicting a person or object that is rolling (e.g., down a hill, across a meadow, through a forest) or flopping (e.g., onto their stomach, into the water, down their driveway).
+- Take your best guess, making a selection as to whether you think this will be a roll or a flop.
+- Get it right and fire the confetti cannon. Get it wrong and get a big, bad, red X.
+
+STREAK
+- Keep track of how it's going with the current win streak counter.
+- See your longest winning streak and try to beat your best score!
+- Don't let the pressure get to you!
+
+LEADERBOARD
+- See who the best roll-or-floppers are.
+- Anonymously track your own streak on the global leaderboard.
+- Gain street cred and climb the ladder by getting the highest streak you possibly can!
+
+Can you guess whether the gif will be a roll or flop? Try it out now!

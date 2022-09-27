@@ -59,16 +59,16 @@
 
         <data android:scheme="io.rownd.reactnativedemo" />
       </intent-filter>
-      <intent-filter>
+      <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
 
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
 
         <data
-            android:scheme="http"
+            android:scheme="https"
             android:host="rof.rownd.link"
-            android:pathPattern="/*" />
+            android:pathPattern="*" />
       </intent-filter>
     </activity>
     <activity
