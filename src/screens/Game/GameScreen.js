@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import React, { useState } from 'react';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import BackgroundImageComponent from '../../components/Background';
@@ -51,6 +51,9 @@ export default function GameScreen({ data }) {
   };
 
   const pickRollFlop = (value) => {
+    if (!data?.length || data?.length < 1) {
+      return;
+    }
     if (value === data[index].answer) {
       handleConfettiCannon();
       setIsCorrect(true);
@@ -168,6 +171,7 @@ export default function GameScreen({ data }) {
               <Text style={{ color: 'white', fontSize: 30 }}>NEXT</Text>
             </TouchableOpacity>
           ) : (
+            !data?.length ? <ActivityIndicator size="large" color="#fff" /> :
             <>
               <TouchableOpacity
                 style={{
