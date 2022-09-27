@@ -24,6 +24,7 @@ jobs:
     with:
       ruby-version: 2.7.2
       bundler-cache: true
+      working-directory: ./android
 
   - name: Run tests
     run: bundle exec fastlane test
