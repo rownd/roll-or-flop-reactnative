@@ -387,7 +387,6 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
-  - Rownd (~> 1.9.0)
   - "rownd-react-native (from `../node_modules/@rownd/react-native`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -552,6 +551,6 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   Yoga: c2b1f2494060865ac1f27e49639e72371b1205fa
 
-PODFILE CHECKSUM: 8f829696e3ad65b21a05e5098d32ae9d9cc43c6e
+PODFILE CHECKSUM: c185fcec4f2532eb29e7fc21a6ceca55bc1cc077
 
 COCOAPODS: 1.11.3
