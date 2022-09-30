@@ -10,7 +10,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/native-stack": "^6.8.0",
-    "@rownd/react-native__native-modules": "^0.7.0",
+    "@rownd/react-native": "^2.2.2",
     "axios": "^0.27.2",
     "expo": "~46.0.9",
     "expo-font": "^10.2.0",
@@ -21,7 +21,8 @@
     "react-native": "0.69.5",
     "react-native-confetti-cannon": "^1.5.2",
     "react-native-error-boundary": "^1.1.15",
-    "react-native-safe-area-context": "^4.3.3",
+    "react-native-immersive-bars": "^1.0.4",
+    "react-native-safe-area-context": "^4.4.1",
     "react-native-screens": "^3.17.0",
     "react-native-svg": "^13.1.0",
     "react-native-svg-transformer": "^1.0.0",

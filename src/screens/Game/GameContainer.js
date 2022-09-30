@@ -20,7 +20,6 @@ export default function GameContainer({ navigation }) {
     <View style={{ flex: 1, alignItems: 'center' }}>
       <Header navigation={navigation} />
       <GameScreen data={data && data?.gifs} />
-      <Footer />
     </View>
   );
 }

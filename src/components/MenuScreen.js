@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import { useRownd } from '@rownd/react-native__native-modules';
+import { useRownd } from '@rownd/react-native';
 import Leaderboard2 from './Leaderboard2';
 
 export default function MenuScreen({ navigation, closeHeader, setShowLeaderboard, showLeaderboard }) {
@@ -36,7 +36,7 @@ export default function MenuScreen({ navigation, closeHeader, setShowLeaderboard
               closeHeader();
             }}
           >
-            <Text style={{ color: 'white', fontSize: 36, textAlign: 'center' }}>
+            <Text style={{ color: 'white', fontSize: 36, textAlign: 'center', fontFamily: 'VeneerCleanReg' }}>
               {is_authenticated ? 'Sign out' : 'Sign in'}
             </Text>
           </TouchableOpacity>
@@ -55,7 +55,7 @@ export default function MenuScreen({ navigation, closeHeader, setShowLeaderboard
               setShowLeaderboard(true);
             }}
           >
-            <Text style={{ color: 'white', fontSize: 36, textAlign: 'center' }}>
+            <Text style={{ color: 'white', fontSize: 36, textAlign: 'center', fontFamily: 'VeneerCleanReg' }}>
               Leaderboard
             </Text>
           </TouchableOpacity>
@@ -73,7 +73,7 @@ export default function MenuScreen({ navigation, closeHeader, setShowLeaderboard
               navigation.navigate('Home');
             }}
           >
-            <Text style={{ color: 'white', fontSize: 36, textAlign: 'center' }}>
+            <Text style={{ color: 'white', fontSize: 36, textAlign: 'center', fontFamily: 'VeneerCleanReg' }}>
               Home
             </Text>
           </TouchableOpacity>
@@ -90,7 +90,7 @@ export default function MenuScreen({ navigation, closeHeader, setShowLeaderboard
               manageAccount()
             }}
           >
-            <Text style={{ color: 'white', fontSize: 36, textAlign: 'center' }}>
+            <Text style={{ color: 'white', fontSize: 36, textAlign: 'center', fontFamily: 'VeneerCleanReg' }}>
               Profile
             </Text>
           </TouchableOpacity>

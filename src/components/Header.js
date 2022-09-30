@@ -43,7 +43,9 @@ const Header = ({ navigation, hideMenu }) => {
           paddingBottom: 10
         }}
       >
-        <SVGLogo width={72} height={20} />
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <SVGLogo width={72} height={20} />
+        </TouchableOpacity>
         {!hideMenu && (
           <TouchableOpacity onPress={() => {
             if (showLeaderboard) {

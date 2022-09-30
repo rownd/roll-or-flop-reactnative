@@ -7,10 +7,9 @@ import HomeScreen from './HomeScreen';
 const HomeContainer = ({ navigation }) => {
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: 'rgba(52, 52, 52, 0)' }}>
       <Header navigation={navigation} />
       <HomeScreen navigation={navigation} />
-      <Footer />
     </View>
   );
 };

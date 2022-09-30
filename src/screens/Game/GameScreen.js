@@ -5,7 +5,7 @@ import BackgroundImageComponent from '../../components/Background';
 import RollOrFlopImage from '../../../assets/svgs/rollorflop-white+blueshadow.svg';
 import RollImage from '../../../assets/svgs/roll-button.svg';
 import FlopImage from '../../../assets/svgs/flop-button.svg';
-import { useRownd } from '@rownd/react-native__native-modules';
+import { useRownd } from '@rownd/react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 export default function GameScreen({ data }) {
@@ -16,6 +16,7 @@ export default function GameScreen({ data }) {
   const [index, setIndex] = useState(0);
 
   const windowHeight = Dimensions.get('window').height;
+  const windowWidth = Dimensions.get('window').width;
 
   const handleConfettiCannon = () => {
     setShowConfetti(false);
@@ -75,7 +76,6 @@ export default function GameScreen({ data }) {
         alignItems: 'center',
       }}
     >
-      <BackgroundImageComponent />
      {windowHeight > 650 && <View style={{ marginTop: 8 }}>
         <RollOrFlopImage height={Math.min(56, windowHeight*.08)} width={137} />
       </View>}
@@ -89,14 +89,14 @@ export default function GameScreen({ data }) {
           marginTop: 16,
         }}
       >
-        <Text style={{ fontSize: 20, color: 'white' }}>
+        <Text style={{ fontSize: 20, color: 'white', fontFamily: 'VeneerCleanReg' }}>
           Will it roll? or Will it flop?
         </Text>
       </View>
       <View
         style={{
           width: '90%',
-          height: Math.min(361, windowHeight*.47),
+          height: Math.min(400, windowHeight*.6),
           position: 'relative',
           marginTop: 8,
           alignItems: 'center',
@@ -119,7 +119,7 @@ export default function GameScreen({ data }) {
           }}
         />
         {(!showResult || (isCorrect && showResult)) && (
-          <Text style={{ marginTop: Math.min(24, windowHeight*.025), color: '#2156CA', fontSize: Math.min(40, windowHeight*.045) }}>
+          <Text style={{ marginTop: Math.min(24, windowHeight*.025), color: '#2156CA', fontSize: Math.min(40, windowHeight*.045), fontFamily: 'VeneerCleanReg' }}>
             {isCorrect && showResult && (
               <AntDesign name="checkcircle" size={Math.min(40, windowHeight*.04)} color="#2156CA" />
             )}{' '}
@@ -128,14 +128,21 @@ export default function GameScreen({ data }) {
         )}
 
         {!isCorrect && showResult && (
-          <Text style={{ marginTop: Math.min(24, windowHeight*.02), color: 'grey', fontSize: Math.min(52, windowHeight*.05) }}>
+          <Text style={{ marginTop: Math.min(24, windowHeight*.02), color: 'grey', fontSize: Math.min(52, windowHeight*.05), fontFamily: 'VeneerCleanReg' }}>
             <AntDesign name="closecircle" size={Math.min(40, windowHeight*.04)} color="#FD0000" /> Nope
           </Text>
         )}
 
         {data && (
           <Image
-            style={{ width: Math.min(208, windowHeight*.42 ), height: Math.min(130, windowHeight*.35), marginTop: Math.min(20, windowHeight*.02), borderRadius: 12 }}
+            style={{ 
+              width: windowWidth * .8, 
+              // height: Math.min(130, windowHeight*.35), 
+              marginTop: Math.min(20, windowHeight*.02), 
+              borderRadius: 12,
+              resizeMode: 'contain',
+              aspectRatio: 1.6
+            }}
             source={{
               uri: showResult ? data[index].url : data[index].still_src,
             }}
@@ -168,7 +175,7 @@ export default function GameScreen({ data }) {
                 });
               }}
             >
-              <Text style={{ color: 'white', fontSize: 30 }}>NEXT</Text>
+              <Text style={{ color: 'white', fontSize: 30, fontFamily: 'VeneerCleanReg' }}>NEXT</Text>
             </TouchableOpacity>
           ) : (
             !data?.length ? <ActivityIndicator size="large" color="#fff" /> :
@@ -233,7 +240,7 @@ export default function GameScreen({ data }) {
             justifyContent: 'center',
           }}
         >
-          <Text style={{ fontSize: 18, color: '#2E6AEE' }}>
+          <Text style={{ fontSize: 18, color: '#2E6AEE', fontFamily: 'VeneerCleanRegIt' }}>
             Streak: {user?.data?.streak ? user?.data?.streak : 0}
           </Text>
         </View>
@@ -247,14 +254,14 @@ export default function GameScreen({ data }) {
             justifyContent: 'center',
           }}
         >
-          <Text style={{ fontSize: 18, color: '#13BBC2' }}>
+          <Text style={{ fontSize: 18, color: '#13BBC2', fontFamily: 'VeneerCleanRegIt' }}>
             Best Streak:{' '}
             {user?.data?.longest_streak ? user?.data?.longest_streak : 0}
           </Text>
         </View>
       </View>
       {showConfetti ? (
-        <ConfettiCannon count={200} origin={{ x: 10, y: 100 }} />
+        <ConfettiCannon count={200} origin={{ x: -10, y: 0 }} />
       ) : null}
     </View>
   );

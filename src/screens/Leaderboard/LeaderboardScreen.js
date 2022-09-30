@@ -12,7 +12,6 @@ export default function LeaderboardScreen({ data }) {
         alignItems: 'center',
       }}
     >
-      <BackgroundImageComponent />
 
       <View
         style={{

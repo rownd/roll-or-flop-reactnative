@@ -50,6 +50,7 @@ const Leaderboard2 = ({ data }) => {
           fontSize: 40,
           textAlign: 'center',
           marginTop: 20,
+          fontFamily: 'VeneerCleanReg'
         }}
       >
         Leaderboard

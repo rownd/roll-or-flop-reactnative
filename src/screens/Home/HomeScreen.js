@@ -3,7 +3,7 @@ import React from 'react';
 import RollOrFlopImage from '../../../assets/svgs/rollorflop-noshadow.svg';
 import WonderGamesImage from '../../../assets/svgs/wondrgames-black2.svg';
 import BackgroundImageComponent from '../../components/Background';
-import { useRownd } from '@rownd/react-native__native-modules';
+import { useRownd } from '@rownd/react-native';
 
 const HomeScreen = ({ navigation }) => {
   const { requestSignIn, user, signOut, is_authenticated } = useRownd();
@@ -16,14 +16,12 @@ const HomeScreen = ({ navigation }) => {
         width: '100%',
         height: '100%',
         alignItems: 'center',
+        backgroundColor: 'rgba(52, 52, 52, 0)',
       }}
     >
-      <BackgroundImageComponent />
-      {user?.data?.first_name && (
-        <Text style={{ fontSize: 40, color: 'white', paddingTop: 20 }}>
-          Welcome, {user?.data?.gamertag || user.data.first_name}
-        </Text>
-      )}
+      <Text style={{ fontSize: 40, color: 'white', paddingTop: 20, fontFamily: 'VeneerCleanReg' }}>
+        { user?.data?.first_name ? `Welcome, ${user?.data?.gamertag || user.data.first_name}` : 'Welcome!' }
+      </Text>
       <View
         style={{
           width: '90%',
@@ -59,7 +57,7 @@ const HomeScreen = ({ navigation }) => {
             borderColor: 'white',
           }}
         >
-          <Text style={{ fontSize: Math.min(38, windowHeight*.05), color: 'white' }}>Play Now</Text>
+          <Text style={{ fontSize: Math.min(38, windowHeight*.05), color: 'white', fontFamily: 'VeneerCleanReg' }}>Play Now</Text>
         </View>
       </TouchableOpacity>
 
@@ -68,14 +66,14 @@ const HomeScreen = ({ navigation }) => {
           style={{ marginTop: Math.min(32, windowHeight*.04) }}
           onPress={() => requestSignIn()}
         >
-          <Text style={{ fontSize: 18, color: 'white' }}>
+          <Text style={{ fontSize: 20, color: 'white', fontFamily: 'VeneerCleanReg' }}>
             Sign in to existing session
           </Text>
         </TouchableOpacity>
       ) : (
         <>
         <TouchableOpacity style={{ marginTop: 32 }} onPress={() => signOut()}>
-          <Text style={{ fontSize: 18, color: 'white' }}>
+          <Text style={{ fontSize: 20, color: 'white', fontFamily: 'VeneerCleanReg' }}>
             Sign out of existing session
           </Text>
         </TouchableOpacity>

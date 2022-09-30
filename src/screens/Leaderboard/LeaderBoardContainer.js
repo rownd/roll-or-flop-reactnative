@@ -22,7 +22,6 @@ export default function LeaderBoardContainer({ navigation }) {
     <View style={{ flex: 1 }}>
       <Header navigation={navigation} />
       <LeaderboardScreen data={data} />
-      <Footer />
     </View>
   );
 }
