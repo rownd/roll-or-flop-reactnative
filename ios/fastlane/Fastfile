@@ -107,7 +107,7 @@ platform :ios do
       skip_submission: true,
       distribute_external: false,
       notify_external_testers: false,
-      ipa: "./your_app_name.ipa"
+      ipa: "./roll-or-flop.ipa"
     )
 
     delete_temp_keychain(keychain_name)
