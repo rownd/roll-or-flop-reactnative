@@ -1,0 +1,65 @@
+name: iOS Build & Deploy
+ 
+on:
+ workflow_dispatch:
+ 
+jobs:
+ deploy:
+  runs-on: macos-latest
+  defaults:
+    run:
+      working-directory: ./ios
+  steps:
+  - uses: actions/checkout@v2
+
+  - uses: actions/setup-node@v1
+    with:
+      node-version: "16.x"
+
+  - name: Install npm dependencies
+    run: npm install
+    working-directory: ./
+
+  - name: Set up ruby env
+    uses: ruby/setup-ruby@v1
+    with:
+      ruby-version: 2.7.2
+      bundler-cache: true
+      working-directory: ./ios
+
+  - name: Decode deploy key
+    uses: timheuer/base64-to-file@v1
+    id: github_deploy_key
+    with:
+      fileName: "github_deploy_key"
+      encodedString: ${{ secrets.FASTLANE_CERTS_DEPLOY_KEY }}
+
+  - name: Ensure SSH key has proper permissions
+    run: chmod 700 ${{ steps.github_deploy_key.outputs.filePath }}/.. && chmod 600 ${{ steps.github_deploy_key.outputs.filePath }}
+
+  - name: Deploy iOS Beta to TestFlight via Fastlane
+    uses: maierj/fastlane-action@v1.4.0
+    with:
+      lane: closed_beta
+    env:
+      APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
+      DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
+      DEVELOPER_APP_IDENTIFIER: '${{ secrets.DEVELOPER_APP_IDENTIFIER }}'
+      DEVELOPER_PORTAL_TEAM_ID: '${{ secrets.DEVELOPER_PORTAL_TEAM_ID }}'
+      FASTLANE_APPLE_ID: '${{ secrets.FASTLANE_APPLE_ID }}'
+      FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: '${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}'
+      MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
+      GIT_KEY_PATH: '${{ steps.github_deploy_key.outputs.filePath }}'
+      PROVISIONING_PROFILE_SPECIFIER: '${{ secrets.PROVISIONING_PROFILE_SPECIFIER }}'
+      TEMP_KEYCHAIN_PASSWORD: '${{ secrets.TEMP_KEYCHAIN_PASSWORD }}'
+      TEMP_KEYCHAIN_USER: '${{ secrets.TEMP_KEYCHAIN_USER }}'
+      APPLE_KEY_ID: '${{ secrets.APPLE_KEY_ID }}'
+      APPLE_ISSUER_ID: '${{ secrets.APPLE_ISSUER_ID }}'
+      APPLE_KEY_CONTENT: '${{ secrets.APPLE_KEY_CONTENT }}'
+
+  # - name: Upload build artifacts
+  #   uses: actions/upload-artifact@v2
+  #   with:
+  #     name: assets
+  #     path: |
+  #       ${{ github.workspace }}/ios/app/build/outputs/bundle/release
