@@ -93,6 +93,7 @@ platform :ios do
       configuration: "Release",
       workspace: "basic2.xcworkspace",
       scheme: "basic2",
+      xcargs: "CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=#{options[:teamid]}",
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
