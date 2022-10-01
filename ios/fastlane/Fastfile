@@ -25,6 +25,7 @@
 # end
 
 default_platform(:ios)
+# xcversion(version: "14")
 
 DEVELOPER_APP_ID = ENV["DEVELOPER_APP_ID"]
 DEVELOPER_APP_IDENTIFIER = ENV["DEVELOPER_APP_IDENTIFIER"]
@@ -35,6 +36,7 @@ APPLE_ISSUER_ID = ENV["APPLE_ISSUER_ID"]
 APPLE_KEY_ID = ENV["APPLE_KEY_ID"]
 APPLE_KEY_CONTENT = ENV["APPLE_KEY_CONTENT"]
 GIT_KEY_PATH = ENV["GIT_KEY_PATH"]
+DEVELOPER_PORTAL_TEAM_ID = ENV["DEVELOPER_PORTAL_TEAM_ID"]
 
 def delete_temp_keychain(name)
   delete_keychain(
@@ -92,6 +94,7 @@ platform :ios do
       configuration: "Release",
       workspace: "basic2.xcworkspace",
       scheme: "basic2",
+      xcargs: "CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=#{DEVELOPER_PORTAL_TEAM_ID}",
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
@@ -107,7 +110,7 @@ platform :ios do
       skip_submission: true,
       distribute_external: false,
       notify_external_testers: false,
-      ipa: "./your_app_name.ipa"
+      ipa: "./basic2.ipa"
     )
 
     delete_temp_keychain(keychain_name)

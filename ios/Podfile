@@ -13,7 +13,7 @@ target 'basic2' do
   use_expo_modules!
   config = use_native_modules!
 
-  pod 'Rownd', '~> 1.8.2'
+  # pod 'Rownd', '~> 1.9.0'
 
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
 
@@ -55,6 +55,14 @@ target 'basic2' do
   post_install do |installer|
     react_native_post_install(installer)
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+    installer.pods_project.targets.each do |target|
+      if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+        target.build_configurations.each do |config|
+            config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+      end
+    end
   end
 
   post_integrate do |installer|

@@ -12,6 +12,8 @@ web-build/
 credentials.json
 
 android/keystores
+ios/fastlane/report.xml
+android/fastlane/report.xml
 
 
 # macOS
