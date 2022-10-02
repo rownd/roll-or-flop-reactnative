@@ -13,7 +13,7 @@ target 'basic2' do
   use_expo_modules!
   config = use_native_modules!
 
-  # pod 'Rownd', '~> 1.9.0'
+  # pod 'Rownd', '~> 1.9.1'
 
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
 

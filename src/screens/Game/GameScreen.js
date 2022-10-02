@@ -76,7 +76,7 @@ export default function GameScreen({ data }) {
         alignItems: 'center',
       }}
     >
-     {windowHeight > 650 && <View style={{ marginTop: 8 }}>
+     {windowHeight > 750 && <View style={{ marginTop: 8 }}>
         <RollOrFlopImage height={Math.min(56, windowHeight*.08)} width={137} />
       </View>}
       <View
@@ -96,30 +96,28 @@ export default function GameScreen({ data }) {
       <View
         style={{
           width: '90%',
-          height: Math.min(400, windowHeight*.6),
-          position: 'relative',
+          // height: Math.min(360, windowHeight*.6),
+          // position: 'relative',
           marginTop: 8,
           alignItems: 'center',
         }}
       >
         <View
           style={{
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            bottom: 0,
-            top: 0,
-            backgroundColor: 'white',
-            opacity: 0.6,
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
             borderRadius: 40,
             display: 'flex',
             alignItems: 'center',
             borderWidth: showResult && !isCorrect ? 10 : 0,
             borderColor: '#FD0000',
+            padding: 15,
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            flexDirection: 'column'
           }}
-        />
+        >
         {(!showResult || (isCorrect && showResult)) && (
-          <Text style={{ marginTop: Math.min(24, windowHeight*.025), color: '#2156CA', fontSize: Math.min(40, windowHeight*.045), fontFamily: 'VeneerCleanReg' }}>
+          <Text style={{  color: '#2156CA', fontSize: Math.min(40, windowHeight*.045), fontFamily: 'VeneerCleanReg' }}>
             {isCorrect && showResult && (
               <AntDesign name="checkcircle" size={Math.min(40, windowHeight*.04)} color="#2156CA" />
             )}{' '}
@@ -128,7 +126,7 @@ export default function GameScreen({ data }) {
         )}
 
         {!isCorrect && showResult && (
-          <Text style={{ marginTop: Math.min(24, windowHeight*.02), color: 'grey', fontSize: Math.min(52, windowHeight*.05), fontFamily: 'VeneerCleanReg' }}>
+          <Text style={{ color: 'grey', fontSize: Math.min(52, windowHeight*.05), fontFamily: 'VeneerCleanReg' }}>
             <AntDesign name="closecircle" size={Math.min(40, windowHeight*.04)} color="#FD0000" /> Nope
           </Text>
         )}
@@ -137,7 +135,6 @@ export default function GameScreen({ data }) {
           <Image
             style={{ 
               width: windowWidth * .8, 
-              // height: Math.min(130, windowHeight*.35), 
               marginTop: Math.min(20, windowHeight*.02), 
               borderRadius: 12,
               resizeMode: 'contain',
@@ -151,7 +148,6 @@ export default function GameScreen({ data }) {
 
         <View
           style={{
-            width: '100%',
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'center',
@@ -219,6 +215,7 @@ export default function GameScreen({ data }) {
           )}
         </View>
       </View>
+      </View>
 
       <View
         style={{
@@ -261,7 +258,7 @@ export default function GameScreen({ data }) {
         </View>
       </View>
       {showConfetti ? (
-        <ConfettiCannon count={200} origin={{ x: -10, y: 0 }} />
+        <ConfettiCannon count={200} origin={{ x: -25, y: 0 }} fadeOut={true} />
       ) : null}
     </View>
   );

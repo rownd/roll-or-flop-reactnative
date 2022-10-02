@@ -63,7 +63,7 @@ const HomeScreen = ({ navigation }) => {
 
       {!is_authenticated ? (
         <TouchableOpacity
-          style={{ marginTop: Math.min(32, windowHeight*.04) }}
+          style={{ marginTop: 18 }}
           onPress={() => requestSignIn()}
         >
           <Text style={{ fontSize: 20, color: 'white', fontFamily: 'VeneerCleanReg' }}>
@@ -72,7 +72,7 @@ const HomeScreen = ({ navigation }) => {
         </TouchableOpacity>
       ) : (
         <>
-        <TouchableOpacity style={{ marginTop: 32 }} onPress={() => signOut()}>
+        <TouchableOpacity style={{ marginTop: 18 }} onPress={() => signOut()}>
           <Text style={{ fontSize: 20, color: 'white', fontFamily: 'VeneerCleanReg' }}>
             Sign out of existing session
           </Text>

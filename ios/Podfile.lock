@@ -34,6 +34,7 @@ PODS:
   - glog (0.3.5)
   - JWTDecode (3.0.0)
   - LBBottomSheet (1.0.24)
+  - lottie-ios (3.4.3)
   - RCT-Folly (2021.06.28.00-v2):
     - boost
     - DoubleConversion
@@ -326,19 +327,20 @@ PODS:
     - React-RCTImage
   - RNSVG (13.1.0):
     - React-Core
-  - Rownd (1.9.0):
-    - AnyCodable-FlightSchool
-    - CodeScanner_Rownd
-    - Get
-    - JWTDecode
-    - LBBottomSheet
-    - ReSwift
-    - ReSwiftThunk
-    - Sodium
-    - SwiftKeychainWrapper
-  - rownd-react-native (2.2.3):
+  - Rownd (1.9.1):
+    - AnyCodable-FlightSchool (~> 0.6.5)
+    - CodeScanner_Rownd (~> 2.2.1)
+    - Get (~> 2.0.1)
+    - JWTDecode (~> 3.0.0)
+    - LBBottomSheet (~> 1.0.24)
+    - lottie-ios (~> 3.4.3)
+    - ReSwift (~> 6.1.0)
+    - ReSwiftThunk (~> 2.0.1)
+    - Sodium (~> 0.9.1)
+    - SwiftKeychainWrapper (~> 4.0.1)
+  - rownd-react-native (2.3.0):
     - React-Core
-    - Rownd (~> 1.9.0)
+    - Rownd (~> 1.9.1)
   - Sodium (0.9.1)
   - SwiftKeychainWrapper (4.0.1)
   - Yoga (1.14.0)
@@ -387,6 +389,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
+  - Rownd (~> 1.9.1)
   - "rownd-react-native (from `../node_modules/@rownd/react-native`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -398,6 +401,7 @@ SPEC REPOS:
     - Get
     - JWTDecode
     - LBBottomSheet
+    - lottie-ios
     - ReSwift
     - ReSwiftThunk
     - Rownd
@@ -514,6 +518,7 @@ SPEC CHECKSUMS:
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
   JWTDecode: 82480a7173f8a811954e7e14a2b59f688ca4222a
   LBBottomSheet: 1d1a27847388b1a0fc266b439bcc9b386f792886
+  lottie-ios: 9ae750cdc7820fecbd3c2f0cfc493038208fcdc4
   RCT-Folly: b9d9fe1fc70114b751c076104e52f3b1b5e5a95a
   RCTRequired: 85c60c4bde8241278be2c93420de4c65475a2151
   RCTTypeSafety: 15990f289215eb0fc65c5eb6e2610faeeda8d5e1
@@ -545,12 +550,12 @@ SPEC CHECKSUMS:
   ReSwiftThunk: 7ca5145764be6f30b62db88a52d170133954629e
   RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9
   RNSVG: 1153e8eeb34c788841016c517dba9f57f20b762f
-  Rownd: b41aeae995f0869001999035602cd0ba868d18bd
-  rownd-react-native: 98070455913084ef3e148d3bd143f5c0c86b77cc
+  Rownd: dba2e6f39935641dd4b4b1171c91520d4292f2c0
+  rownd-react-native: 595ad5fadaee70e633ead8bc1a7f17998f975cb7
   Sodium: 23d11554ecd556196d313cf6130d406dfe7ac6da
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   Yoga: c2b1f2494060865ac1f27e49639e72371b1205fa
 
-PODFILE CHECKSUM: c185fcec4f2532eb29e7fc21a6ceca55bc1cc077
+PODFILE CHECKSUM: 4799e25c1c90682bfacd7493967ba572ddcbc35b
 
 COCOAPODS: 1.11.3
