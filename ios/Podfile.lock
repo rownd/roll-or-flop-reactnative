@@ -1,11 +1,19 @@
 PODS:
   - AnyCodable-FlightSchool (0.6.5)
+  - AppAuth (1.6.0):
+    - AppAuth/Core (= 1.6.0)
+    - AppAuth/ExternalUserAgent (= 1.6.0)
+  - AppAuth/Core (1.6.0)
+  - AppAuth/ExternalUserAgent (1.6.0):
+    - AppAuth/Core
   - boost (1.76.0)
   - CodeScanner_Rownd (2.2.1)
   - DoubleConversion (1.1.6)
   - EXApplication (4.2.2):
     - ExpoModulesCore
   - EXConstants (13.2.4):
+    - ExpoModulesCore
+  - EXErrorRecovery (3.2.0):
     - ExpoModulesCore
   - EXFileSystem (14.1.0):
     - ExpoModulesCore
@@ -32,9 +40,17 @@ PODS:
   - fmt (6.2.1)
   - Get (2.0.1)
   - glog (0.3.5)
+  - GoogleSignIn (6.2.4):
+    - AppAuth (~> 1.5)
+    - GTMAppAuth (~> 1.3)
+    - GTMSessionFetcher/Core (< 3.0, >= 1.1)
+  - GTMAppAuth (1.3.1):
+    - AppAuth/Core (~> 1.6)
+    - GTMSessionFetcher/Core (< 3.0, >= 1.5)
+  - GTMSessionFetcher/Core (2.1.0)
   - JWTDecode (3.0.0)
   - LBBottomSheet (1.0.24)
-  - lottie-ios (3.4.3)
+  - lottie-ios (3.4.4)
   - RCT-Folly (2021.06.28.00-v2):
     - boost
     - DoubleConversion
@@ -327,10 +343,11 @@ PODS:
     - React-RCTImage
   - RNSVG (13.1.0):
     - React-Core
-  - Rownd (1.9.1):
+  - Rownd (1.12.0):
     - AnyCodable-FlightSchool (~> 0.6.5)
     - CodeScanner_Rownd (~> 2.2.1)
     - Get (~> 2.0.1)
+    - GoogleSignIn (~> 6.2.4)
     - JWTDecode (~> 3.0.0)
     - LBBottomSheet (~> 1.0.24)
     - lottie-ios (~> 3.4.3)
@@ -338,9 +355,9 @@ PODS:
     - ReSwiftThunk (~> 2.0.1)
     - Sodium (~> 0.9.1)
     - SwiftKeychainWrapper (~> 4.0.1)
-  - rownd-react-native (2.3.0):
+  - rownd-react-native (2.5.0):
     - React-Core
-    - Rownd (~> 1.9.1)
+    - Rownd (~> 1.12.0)
   - Sodium (0.9.1)
   - SwiftKeychainWrapper (4.0.1)
   - Yoga (1.14.0)
@@ -350,6 +367,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - EXApplication (from `../node_modules/expo-application/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
+  - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
   - EXFont (from `../node_modules/expo-font/ios`)
   - Expo (from `../node_modules/expo`)
@@ -389,16 +407,19 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
-  - Rownd (~> 1.9.1)
   - "rownd-react-native (from `../node_modules/@rownd/react-native`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - AnyCodable-FlightSchool
+    - AppAuth
     - CodeScanner_Rownd
     - fmt
     - Get
+    - GoogleSignIn
+    - GTMAppAuth
+    - GTMSessionFetcher
     - JWTDecode
     - LBBottomSheet
     - lottie-ios
@@ -417,6 +438,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-application/ios"
   EXConstants:
     :path: "../node_modules/expo-constants/ios"
+  EXErrorRecovery:
+    :path: "../node_modules/expo-error-recovery/ios"
   EXFileSystem:
     :path: "../node_modules/expo-file-system/ios"
   EXFont:
@@ -500,11 +523,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AnyCodable-FlightSchool: 84b795a9d3ec7ba9e5488673d15cc1b37a566af4
+  AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   CodeScanner_Rownd: 43ea1ea198c17653c32c31e797e274c0d7a695ae
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   EXApplication: e418d737a036e788510f2c4ad6c10a7d54d18586
   EXConstants: 7c44785d41d8e959d527d23d29444277a4d1ee73
+  EXErrorRecovery: 74d71ee59f6814315457b09d68e86aa95cc7d05d
   EXFileSystem: 927e0a8885aa9c49e50fc38eaba2c2389f2f1019
   EXFont: a5d80bd9b3452b2d5abbce2487da89b0150e6487
   Expo: fcdb32274e2ca9c7638d3b21b30fb665c6869219
@@ -516,9 +541,12 @@ SPEC CHECKSUMS:
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   Get: d2c1fa40936760c47dcd3956e9eb26dc39fd76ba
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
+  GoogleSignIn: 5651ce3a61e56ca864160e79b484cd9ed3f49b7a
+  GTMAppAuth: 0ff230db599948a9ad7470ca667337803b3fc4dd
+  GTMSessionFetcher: ffbb25ec00ebcb5201adab0a56d808f6f1902d9f
   JWTDecode: 82480a7173f8a811954e7e14a2b59f688ca4222a
   LBBottomSheet: 1d1a27847388b1a0fc266b439bcc9b386f792886
-  lottie-ios: 9ae750cdc7820fecbd3c2f0cfc493038208fcdc4
+  lottie-ios: 8f97d3271e155c2d688875c29cd3c74908aef5f8
   RCT-Folly: b9d9fe1fc70114b751c076104e52f3b1b5e5a95a
   RCTRequired: 85c60c4bde8241278be2c93420de4c65475a2151
   RCTTypeSafety: 15990f289215eb0fc65c5eb6e2610faeeda8d5e1
@@ -550,12 +578,12 @@ SPEC CHECKSUMS:
   ReSwiftThunk: 7ca5145764be6f30b62db88a52d170133954629e
   RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9
   RNSVG: 1153e8eeb34c788841016c517dba9f57f20b762f
-  Rownd: dba2e6f39935641dd4b4b1171c91520d4292f2c0
-  rownd-react-native: 595ad5fadaee70e633ead8bc1a7f17998f975cb7
+  Rownd: 3cdbe5ddaf40639b237219d476e731fc96dd7011
+  rownd-react-native: 87358b3439e18ab3754d841577ce19cf6e03114d
   Sodium: 23d11554ecd556196d313cf6130d406dfe7ac6da
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   Yoga: c2b1f2494060865ac1f27e49639e72371b1205fa
 
-PODFILE CHECKSUM: 4799e25c1c90682bfacd7493967ba572ddcbc35b
+PODFILE CHECKSUM: cd1095ffe9eedaf772e12e6fe750053adad67876
 
 COCOAPODS: 1.11.3
