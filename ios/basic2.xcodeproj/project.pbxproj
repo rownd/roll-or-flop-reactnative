@@ -254,7 +254,7 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/CodeScanner_Rownd/CodeScanner_Rownd.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleSignIn/GoogleSignIn.bundle",
-				"${PODS_ROOT}/LBBottomSheet/Resources/BottomSheet.storyboard",
+				"${PODS_ROOT}/LBBottomSheet/Sources/LBBottomSheet/Resources/BottomSheet.storyboard",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
