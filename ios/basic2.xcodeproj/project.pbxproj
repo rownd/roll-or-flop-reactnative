@@ -334,7 +334,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 34CNMPW6U9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 34CNMPW6U9;
 				ENABLE_BITCODE = NO;
@@ -345,7 +345,7 @@
 				INFOPLIST_FILE = basic2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 8.0.8;
+				MARKETING_VERSION = 9.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -373,13 +373,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 34CNMPW6U9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 34CNMPW6U9;
 				INFOPLIST_FILE = basic2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 8.0.8;
+				MARKETING_VERSION = 9.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
