@@ -1,35 +1,33 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import BackgroundImageComponent from '../../components/Background';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function LeaderboardScreen({ data }) {
   return (
     <View
       style={{
-        display: 'flex',
-        width: '100%',
-        height: '100%',
-        alignItems: 'center',
+        display: "flex",
+        width: "100%",
+        height: "100%",
+        alignItems: "center",
       }}
     >
-
       <View
         style={{
-          width: '100%',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-around',
+          width: "100%",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-around",
           marginTop: 12,
           marginBottom: 12,
           padding: 12,
-          backgroundColor: '#13BBC2',
+          backgroundColor: "#13BBC2",
         }}
       >
-        <Text style={{ fontSize: 22, color: 'white' }}>Rank</Text>
-        <Text style={{ width: 170, fontSize: 22, color: 'white' }}>
+        <Text style={{ fontSize: 22, color: "white" }}>Rank</Text>
+        <Text style={{ width: 170, fontSize: 22, color: "white" }}>
           Gamertag
         </Text>
-        <Text style={{ fontSize: 22, color: 'white' }}>Streak</Text>
+        <Text style={{ fontSize: 22, color: "white" }}>Streak</Text>
       </View>
 
       {data &&
@@ -42,17 +40,17 @@ export default function LeaderboardScreen({ data }) {
             <View
               key={idx}
               style={{
-                width: '100%',
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-around',
+                width: "100%",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-around",
               }}
             >
-              <Text style={{ fontSize: 22, color: 'white' }}>{idx + 1}.</Text>
-              <Text style={{ width: 170, fontSize: 22, color: 'white' }}>
+              <Text style={{ fontSize: 22, color: "white" }}>{idx + 1}.</Text>
+              <Text style={{ width: 170, fontSize: 22, color: "white" }}>
                 {gamertag}
               </Text>
-              <Text style={{ fontSize: 22, color: 'white' }}>
+              <Text style={{ fontSize: 22, color: "white" }}>
                 {longest_streak}
               </Text>
             </View>

@@ -19,7 +19,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "io.rownd.rollorflop"
     },
     "android": {
       "adaptiveIcon": {

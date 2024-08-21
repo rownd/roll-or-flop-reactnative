@@ -1,12 +1,11 @@
-import { ActivityIndicator, StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
-import React, { useState } from 'react';
-import ConfettiCannon from 'react-native-confetti-cannon';
-import BackgroundImageComponent from '../../components/Background';
-import RollOrFlopImage from '../../../assets/svgs/rollorflop-white+blueshadow.svg';
-import RollImage from '../../../assets/svgs/roll-button.svg';
-import FlopImage from '../../../assets/svgs/flop-button.svg';
-import { useRownd } from '@rownd/react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { useRownd } from '@rownd/react-native';
+import React, { useState } from 'react';
+import { ActivityIndicator, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import ConfettiCannon from 'react-native-confetti-cannon';
+import FlopImage from '../../../assets/svgs/flop-button.svg';
+import RollImage from '../../../assets/svgs/roll-button.svg';
+import RollOrFlopImage from '../../../assets/svgs/rollorflop-white+blueshadow.svg';
 
 export default function GameScreen({ data }) {
   const { user, is_authenticated, requestSignIn } = useRownd();
